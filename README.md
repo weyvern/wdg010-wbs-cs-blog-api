@@ -1,6 +1,6 @@
 # WD016 Blog (backend)
 
-![WBS Coding School](https://mlsf03rmjfdn.i.optimole.com/fVWTwdQ.Z_5R~130ed/w:auto/h:80/q:90/https://www.wbscodingschool.com/files/WBS_CODING_SCHOOL_logo.svg)
+![WBS Coding School](https://mlsf03rmjfdn.i.optimole.com/fVWTwdQ.Z_5R~130ed/w:auto/h:auto/q:90/https://www.wbscodingschool.com/files/WBS_CODING_SCHOOL_logo.svg)
 
 ## Install
 
@@ -53,9 +53,9 @@ You are taske with implementing authentication in order to:
 # Hints 💡
 
 - You will need three endpoints:
---`POST` /auth/signup => takes a body with `firstName`, `lastName`, `email` and `password` and returns a JWT with the user ID as the payload
---`POST` /auth/signin => takes a body with `email` and `password` and returns a JWT with the user ID as the payload
---`GET` /auth/me => takes no body but an `authorization` header is present, the value of said header is a valid JWT
+-- `POST` /auth/signup => takes a body with `firstName`, `lastName`, `email` and `password` and returns a JWT with the user ID as the payload
+-- `POST` /auth/signin => takes a body with `email` and `password` and returns a JWT with the user ID as the payload
+-- `GET` /auth/me => takes no body but an `authorization` header is present, the value of said header is a valid JWT
 - Implement a `router` in the `routes` director for `auth`
 - Implement a `controller` in the `controllers` directory for users
 - Implement an `User` model in the `models` directory
@@ -69,6 +69,6 @@ You are taske with implementing authentication in order to:
 
 - Hash the password using a library like `bcrypt` before inserting in the database!
 - Do NOT return the password in the `auth/me` endopoint
-- You can return the token as a cookie or in the body and then store it in browser storage, both have their pro and cons
+- You can return the token as a cookie or in the body and then store it in browser storage, both have their pros and cons
 
 
