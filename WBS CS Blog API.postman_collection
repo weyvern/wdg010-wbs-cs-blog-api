@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "4d28d30c-4e5b-479f-9a61-f2cb18cb7682",
+		"name": "Sample Blog API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12928722"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Get all posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{WBS_CS_BLOG_API}}/posts",
+							"host": [
+								"{{WBS_CS_BLOG_API}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Veracruz\",\r\n    \"image\": \"https://mexicodave.com/wp-content/uploads/2020/11/veracruz-mexico-port-aerial.jpeg\",\r\n    \"body\": \"Pastry chocolate cake jujubes candy canes cake candy canes oat cake tootsie roll ice cream. Marzipan pie icing gingerbread donut toffee biscuit candy canes. Cake jelly-o halvah chocolate jelly. Liquorice ice cream jelly beans croissant jelly-o. Icing macaroon sugar plum apple pie sugar plum. Bear claw candy canes sweet roll halvah candy canes chocolate bar halvah. Topping brownie sweet roll gingerbread shortbread. Halvah jelly liquorice cake pastry candy canes bonbon bear claw. Jelly apple pie pastry ice cream powder. Muffin powder chupa chups candy cotton candy lemon drops lollipop pastry tart. Cupcake chocolate cake icing jelly-o dessert. Icing wafer gummies chocolate bar tart. Macaroon oat cake ice cream halvah sweet roll lollipop candy canes. Croissant cake apple pie donut chocolate bar marshmallow tart.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{WBS_CS_BLOG_API}}/posts",
+							"host": [
+								"{{WBS_CS_BLOG_API}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{WBS_CS_BLOG_API}}/posts/6390744c6141f1c36fd5bf39",
+							"host": [
+								"{{WBS_CS_BLOG_API}}"
+							],
+							"path": [
+								"posts",
+								"6390744c6141f1c36fd5bf39"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mexico City!!!!!!\",\r\n    \"image\": \"https://www.fodors.com/wp-content/uploads/2021/05/UltimateMexicoCity__HERO_shutterstock_1058054480.jpg\",\r\n    \"body\": \"Pastry chocolate cake jujubes candy canes cake candy canes oat cake tootsie roll ice cream. Marzipan pie icing gingerbread donut toffee biscuit candy canes. Cake jelly-o halvah chocolate jelly. Liquorice ice cream jelly beans croissant jelly-o. Icing macaroon sugar plum apple pie sugar plum. Bear claw candy canes sweet roll halvah candy canes chocolate bar halvah. Topping brownie sweet roll gingerbread shortbread. Halvah jelly liquorice cake pastry candy canes bonbon bear claw. Jelly apple pie pastry ice cream powder. Muffin powder chupa chups candy cotton candy lemon drops lollipop pastry tart. Cupcake chocolate cake icing jelly-o dessert. Icing wafer gummies chocolate bar tart. Macaroon oat cake ice cream halvah sweet roll lollipop candy canes. Croissant cake apple pie donut chocolate bar marshmallow tart.\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{WBS_CS_BLOG_API}}/posts/6390744c6141f1c36fd5bf39",
+							"host": [
+								"{{WBS_CS_BLOG_API}}"
+							],
+							"path": [
+								"posts",
+								"6390744c6141f1c36fd5bf39"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{WBS_CS_BLOG_API}}/posts/642e82af74e05046c83ec14b",
+							"host": [
+								"{{WBS_CS_BLOG_API}}"
+							],
+							"path": [
+								"posts",
+								"642e82af74e05046c83ec14b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Tobias\",\r\n    \"lastName\": \"Hopp\",\r\n    \"email\": \"t.hopp@wbscodingschool.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{WBS_CS_BLOG_API}}/auth/signup",
+							"host": [
+								"{{WBS_CS_BLOG_API}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"email\": \"jorge.paul@wbscodingschool.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{WBS_CS_BLOG_API}}/auth/signin",
+							"host": [
+								"{{WBS_CS_BLOG_API}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkwNzNhYjAxMjVmMWIzNjRlMjUwYTciLCJpYXQiOjE2NzA0MTExNzl9.Dze_XFfjleICsxNQ9DP6NXMjY8nc_EnnKHrhB_9JK14",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{WBS_CS_BLOG_API}}/auth/me",
+							"host": [
+								"{{WBS_CS_BLOG_API}}"
+							],
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
