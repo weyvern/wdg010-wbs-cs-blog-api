@@ -25,20 +25,24 @@ export const getSinglePost = asyncHandler(async (req, res, next) => {
 export const updatePost = asyncHandler(async (req, res, next) => {
   const {
     body,
-    params: { id }
+    params: { id },
+    uid
   } = req;
   const found = await Post.findById(id);
   if (!found) throw new ErrorResponse(`Post with id of ${id} doesn't exist`, 404);
+  if (uid !== found.author.toString()) throw new ErrorResponse(`You have no permission to update this post`, 401);
   const updatedPost = await (await Post.findOneAndUpdate({ _id: id }, body, { new: true })).populate('author');
   res.json(updatedPost);
 });
 
 export const deletePost = asyncHandler(async (req, res, next) => {
   const {
-    params: { id }
+    params: { id },
+    uid
   } = req;
   const found = await Post.findById(id);
-  if (!found) throw new Error(`Post with id of ${id} doesn't exist`);
+  if (!found) throw new ErrorResponse(`Post with id of ${id} doesn't exist`, 404);
+  if (uid !== found.author.toString()) throw new ErrorResponse(`You have no permission to delete this post`, 401);
   await Post.deleteOne({ _id: id });
   res.json({ success: `Post with id of ${id} was deleted` });
 });
